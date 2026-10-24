@@ -250,7 +250,6 @@ function renderPhotos() {
         </span>
         <span class="photo-meta">
           <span class="photo-title">${escapeHtml(photo.title)}</span>
-          <span class="photo-location">${escapeHtml(spot?.name ?? "スポット未設定")}</span>
         </span>
       </button>`;
   }).join("");
@@ -398,3 +397,4 @@ renderCarousel();
 renderPhotos();
 initMap();
 restartCarouselTimer();
+

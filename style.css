@@ -171,3 +171,7 @@ h1 { margin-bottom: 17px; font-size: clamp(31px, 5vw, 56px); line-height: 1.38; 
   height: 100%;
   object-fit: contain;
 }
+
+#spot-results {
+  display: none;
+}
