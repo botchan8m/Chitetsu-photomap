@@ -173,5 +173,5 @@ h1 { margin-bottom: 17px; font-size: clamp(31px, 5vw, 56px); line-height: 1.38; 
 }
 
 #spot-results {
-  display: none;
+  display: none !important;;
 }
