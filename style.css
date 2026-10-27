@@ -175,3 +175,213 @@ h1 { margin-bottom: 17px; font-size: clamp(31px, 5vw, 56px); line-height: 1.38; 
 #spot-results {
   display: none !important;;
 }
+
+/* ==============================
+   時刻表・お出かけ情報
+============================== */
+
+.travel-info {
+  background: #f6f8f4;
+  padding: 76px 0 80px;
+  color: #25372d;
+}
+
+.travel-info-inner {
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.travel-eyebrow {
+  margin: 0 0 12px;
+  color: #47745a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.travel-info h2 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.5;
+}
+
+.travel-description {
+  margin: 12px 0 36px;
+  color: #69776d;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.travel-subheading {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.travel-note {
+  margin: 0 0 20px;
+  color: #69776d;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.timetable-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.timetable-card {
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e3e9e1;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(35, 55, 43, 0.04);
+}
+
+.timetable-line {
+  color: #47745a;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.timetable-card h4 {
+  margin: 10px 0 8px;
+  font-size: 21px;
+}
+
+.timetable-card p {
+  min-height: 42px;
+  margin: 0 0 20px;
+  color: #69776d;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.timetable-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timetable-links a,
+.official-link-buttons a {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid #dce5dc;
+  border-radius: 8px;
+  color: #315b43;
+  background: #f8faf7;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.timetable-links a:hover,
+.official-link-buttons a:hover {
+  background: #e8f0e7;
+  border-color: #b8cdbb;
+}
+
+.official-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 28px;
+  padding: 26px;
+  background: #e9efe7;
+  border-radius: 14px;
+}
+
+.official-links h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.official-links p {
+  margin: 0;
+  color: #69776d;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.official-link-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.official-link-buttons a {
+  background: #ffffff;
+  white-space: nowrap;
+}
+
+.timetable-disclaimer {
+  margin: 16px 0 0;
+  color: #788278;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* スマートフォン */
+@media (max-width: 700px) {
+  .travel-info {
+    padding: 52px 0 56px;
+  }
+
+  .travel-info-inner {
+    width: calc(100% - 36px);
+  }
+
+  .travel-description {
+    margin-bottom: 28px;
+  }
+
+  .timetable-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .timetable-card {
+    padding: 20px;
+  }
+
+  .timetable-card p {
+    min-height: 0;
+    margin-bottom: 16px;
+  }
+
+  .official-links {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .official-link-buttons {
+    flex-direction: column;
+  }
+
+  .official-link-buttons a {
+    white-space: normal;
+  }
+}
+
+/* 本線：平日・休日、上下別の時刻表 */
+.timetable-direction {
+  margin-top: 18px;
+}
+
+.timetable-direction h5 {
+  margin: 0 0 8px;
+  color: #52685a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.timetable-direction + .timetable-direction {
+  padding-top: 16px;
+  border-top: 1px solid #e3e9e1;
+}
