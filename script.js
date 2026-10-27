@@ -133,7 +133,7 @@ const PHOTOS = [
   { id: "photo-8", spotId: "spot-8", title: "No.008", image: "images/IMG_6551.jpg", landscape: true, featured: true },
   { id: "photo-9", spotId: "spot-9", title: "No.009", image: "images/IMG_6559.jpg", landscape: true, featured: false },
   { id: "photo-10", spotId: "spot-10", title: "No.010", image: "images/IMG_6571.jpg", landscape: true, featured: true },
-  { id: "photo-11", spotId: "spot-11", title: "No.011", image: "images/IMG_2536.png", landscape: true, featured: true }
+  { id: "photo-11", spotId: "spot-11", title: "No.011", image: "images/IMG_2536.jpg", landscape: true, featured: true }
 ];
 
 const INITIAL_VISIBLE_PHOTOS = 6;
