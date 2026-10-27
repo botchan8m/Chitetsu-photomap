@@ -109,7 +109,7 @@ const SPOTS = [
   },
     {
     id: "spot-11",
-    number: 10,
+    number: 11,
     name: "No.011",
     area: "新宮川駅～中加積駅",
     lat: 36.729708,
