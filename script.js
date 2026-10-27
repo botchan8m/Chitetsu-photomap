@@ -107,7 +107,7 @@ const SPOTS = [
     description: "夕方の宇奈月温泉方面の電車を撮影できます。",
     mapUrl: "https://www.openstreetmap.org/?mlat=36.744131&mlon=137.342137#map=16/36.744131/137.342137"
   },
-    {
+  {
     id: "spot-11",
     number: 11,
     name: "No.011",
@@ -116,6 +116,16 @@ const SPOTS = [
     lng: 137.349334,
     description: "夕方の宇奈月温泉方面の電車を撮影できます。",
     mapUrl: "https://www.openstreetmap.org/?mlat=36.729708&mlon=137.329334#map=16/36.729708/137.329334"
+  },
+  {
+    id: "spot-12",
+    number: 12,
+    name: "No.012",
+    area: "釜ヶ淵駅～沢中山駅",
+    lat: 36.625390,
+    lng: 137.321185,
+    description: "夕方の電鉄富山方面の電車を撮影できます。",
+    mapUrl: "https://www.openstreetmap.org/?mlat=36.625390&mlon=137.321185#map=16/36.625390/137.321185"
   }
 ];
 
@@ -133,7 +143,8 @@ const PHOTOS = [
   { id: "photo-8", spotId: "spot-8", title: "No.008", image: "images/IMG_6551.jpg", landscape: true, featured: true },
   { id: "photo-9", spotId: "spot-9", title: "No.009", image: "images/IMG_6559.jpg", landscape: true, featured: false },
   { id: "photo-10", spotId: "spot-10", title: "No.010", image: "images/IMG_6571.jpg", landscape: true, featured: true },
-  { id: "photo-11", spotId: "spot-11", title: "No.011", image: "images/IMG_2536.jpg", landscape: true, featured: true }
+  { id: "photo-11", spotId: "spot-11", title: "No.011", image: "images/IMG_2536.jpg", landscape: true, featured: true },
+  { id: "photo-12", spotId: "spot-12", title: "No.012", image: "images/IMG_3000.jpg", landscape: true, featured: true }
 ];
 
 const INITIAL_VISIBLE_PHOTOS = 6;
