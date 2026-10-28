@@ -385,3 +385,72 @@ h1 { margin-bottom: 17px; font-size: clamp(31px, 5vw, 56px); line-height: 1.38; 
   padding-top: 16px;
   border-top: 1px solid #e3e9e1;
 }
+
+/* 経路検索コントロール */
+.route-controls {
+  margin: 16px 0;
+  padding: 16px 18px;
+  background: #f6f8f4;
+  border: 1px solid #e3e9e1;
+  border-radius: 12px;
+}
+
+.route-controls label {
+  display: block;
+  margin-bottom: 8px;
+  color: #315b43;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.route-controls select {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 12px;
+  border: 1px solid #d5dfd3;
+  border-radius: 8px;
+  background: #fff;
+  color: #25372d;
+  font-size: 14px;
+}
+
+.route-controls p {
+  margin: 9px 0 0;
+  color: #69776d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ピンのポップアップ内の経路検索ボタン */
+.route-search-button {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #39734d;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.route-search-button:hover {
+  background: #2e603f;
+}
+
+.route-search-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+@media (max-width: 700px) {
+  .route-controls {
+    padding: 14px;
+  }
+
+  .route-controls select {
+    max-width: none;
+  }
+}
