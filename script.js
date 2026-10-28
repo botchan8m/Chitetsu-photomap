@@ -343,7 +343,9 @@ function initMap() {
       if (link) {
         link.addEventListener("click", (event) => {
           event.preventDefault();
-          if (firstPhoto) openPhotoDialog(firstPhoto.id);
+          if (firstPhoto) {
+            openPhotoDialog(firstPhoto.id);
+          }
         }, { once: true });
       }
 
@@ -356,68 +358,27 @@ function initMap() {
           // 移動手段を取得
           const mode = document.getElementById("route-mode").value;
 
-          // 新しいタブを先に開き、ポップアップ制限を回避
-          const routeWindow = window.open("about:blank", "_blank");
+          // 撮影スポットの座標を目的地に設定
+          const destination = `${spot.lat},${spot.lng}`;
 
-          if (!routeWindow) {
-            alert("経路検索を開けませんでした。ブラウザのポップアップを許可してください。");
-            return;
-          }
+          const params = new URLSearchParams({
+            api: "1",
+            destination: destination,
+            travelmode: mode
+          });
 
-          if (!navigator.geolocation) {
-            routeWindow.close();
-            alert("このブラウザでは位置情報を利用できません。");
-            return;
-          }
+          // Googleマップを直接開く
+          const url =
+            `https://www.google.com/maps/dir/?${params.toString()}`;
 
-          routeButton.disabled = true;
-          routeButton.textContent = "現在地を取得中…";
-
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              const origin =
-                `${position.coords.latitude},${position.coords.longitude}`;
-
-              const destination = `${spot.lat},${spot.lng}`;
-
-              const params = new URLSearchParams({
-                api: "1",
-                origin: origin,
-                destination: destination,
-                travelmode: mode
-              });
-
-              routeWindow.location.href =
-                `https://www.google.com/maps/dir/?${params.toString()}`;
-
-              routeButton.disabled = false;
-              routeButton.textContent = "現在地から経路検索 ↗";
-            },
-            (error) => {
-              routeWindow.close();
-              routeButton.disabled = false;
-              routeButton.textContent = "現在地から経路検索 ↗";
-
-              if (error.code === 1) {
-                alert("位置情報が許可されていません。ブラウザのサイト設定から位置情報を許可してください。");
-              } else if (error.code === 3) {
-                alert("現在地の取得がタイムアウトしました。通信環境や位置情報の設定を確認して、もう一度お試しください。");
-              } else {
-                alert("現在地を取得できませんでした。位置情報の設定を確認して、もう一度お試しください。");
-              }
-            },
-            {
-              enableHighAccuracy: true,
-              timeout: 15000,
-              maximumAge: 60000
-            }
-          );
+          window.open(url, "_blank", "noopener,noreferrer");
         });
       }
     });
 
     markerBySpotId.set(spot.id, marker);
   });
+
 
   if (SPOTS.length > 1) {
     const bounds = L.latLngBounds(SPOTS.map((spot) => [spot.lat, spot.lng]));
